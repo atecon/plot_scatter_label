@@ -1,0 +1,10 @@
+author = Artur Tarassow
+email = atecon@posteo.de
+version = 0.11
+date = 2017-02-20
+description = Add labels to scatter plot
+tags = C10
+min-version = 1.9.4
+public = AddLabel
+help = plot_scatter_label_help.txt
+sample-script = plot_scatter_label_sample.inp

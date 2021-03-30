@@ -1,0 +1,16 @@
+This function adds labels to an otherwise standard scatter plot.
+
+INPUT:
+	series Y	- Series
+	series X	- Series
+	strings LABEL	- Array of strings
+
+OUTPUT:
+	S		- String holding the commands for gnuplot
+
+Changelog:
+v0.11 (Febr.. 2017)
+  - add "include plot_scatter_label.gfn"
+0.1	(Nov. 2015)
+  - initial version
+
