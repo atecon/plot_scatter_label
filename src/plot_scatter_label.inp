@@ -1,23 +1,11 @@
-clear
-set verbose off
-
-include plot_scatter_label.gfn
-
-open mrw.gdt --quiet
-
-smpl 1 3
-strings C = array(3)
-C[1] = "Algeria"
-C[2] = "Angola"
-C[3] = "Benin"
-string GP = AddLabel(gdpgrow,school, C)
-list lplot = gdpgrow school
-
-plot lplot
-    literal set term png font 'Helvetica,12' lw 1
-    literal set nokey
-    literal set title ''
-    literal set xrange[0:]
-    literal set linetype 1 lc rgb 'blue' pt 7 ps 1
-    literal @GP
-end plot --output=display
+function string AddLabel (series Y,
+                          series X,
+                          strings LABEL)
+    matrix XY = {Y}~{X}
+    string S = ""
+    loop i=1..rows(XY) -q
+        sprintf s "set label $i '%s' at %.4f-0.1, %.4f-0.2 centre font ',10' ; ", LABEL[$i], XY[i,2],XY[i,1]
+        S += s
+    endloop
+    return S
+end function
